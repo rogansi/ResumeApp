@@ -14,9 +14,7 @@ class App extends Component {
     render(){
         return (
             <div id= "all">
-               <HeaderResumeContainer></HeaderResumeContainer>
-               <ContentResumeContainer></ContentResumeContainer>
-               <FooterResumeContainer></FooterResumeContainer>
+              HELLO
             </div>
         );
     }

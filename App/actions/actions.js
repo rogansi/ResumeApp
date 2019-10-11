@@ -11,12 +11,13 @@ export const getAllProjects = () =>({
 export const networkDown = () =>({
     type: C.NETWORK_DOWN
 })
-export function getSnackList(){
+
+export function getProjectList(){
     return function(dispatch){
 
         dispatch(requestProjects)
-
-        return fetch(C.BASE_API_URL, {
+        console.log("HELLO")
+        return fetch(C.BASE_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -28,7 +29,7 @@ export function getSnackList(){
         
         .then(response=>response.json()
         .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getAllProjects(data)))
-        , error => dispatch(networkDown()))
+        , error => dispatch(networkDown()).then(console.log(error)))
          
     }
 
