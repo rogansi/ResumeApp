@@ -6,9 +6,9 @@ import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { resume } from './reducers/reducers'
-import { getProjectList } from './actions/actions'
+import { getProjectList, getContactList } from './actions/actions'
 
-console.log("Anything?")
+
 //Using middleware to log the action calls for debugging purposes
 const loggerMiddleware = createLogger()
 
@@ -20,5 +20,5 @@ const store = createStore(resume,applyMiddleware(
 
 
 store.dispatch(getProjectList())
-.then(console.log(store.getState()))
+.then(store.dispatch(getContactList()))
 .then(ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app')))

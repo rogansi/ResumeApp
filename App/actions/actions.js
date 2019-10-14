@@ -4,30 +4,69 @@ import fetch from 'cross-fetch'
 export const requestProjects = () =>({
     type: C.REQUEST_PROJECTS
 })
-export const getAllProjects = () =>({
-    type: C.GET_ALL_PROJECTS
+export const requestContacts = () =>({
+    type: C.REQUEST_CONTACTS
+})
+
+export const getAllProjects = (projects) =>({
+    type: C.GET_ALL_PROJECTS,
+    projects
+})
+
+export const getAllContacts = (contacts) =>({
+    type: C.GET_ALL_CONTACTS,
+    contacts
 })
 
 export const networkDown = () =>({
     type: C.NETWORK_DOWN
 })
 
+//Gets all projects from the main site
 export function getProjectList(){
     return function(dispatch){
 
         dispatch(requestProjects)
-        console.log("HELLO")
-        return fetch(C.BASE_URL, {
+        
+        return fetch(C.BASE_URL+'?token='+C.TMP_TOKEN+'&AC=PR', {
             //return fetch(C.TEST_URL, {
             method: 'GET',
             headers: {
-                'Content-Type':'application/x-www-form-urlencoded'
+                'Accept':'application/json',
+                'Content-Type':'application/json'
             }
         })
         .then(response=>response.json()
-        .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getAllProjects(data)))
+        .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getAllProjects(data.projects)))
         //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
         , error => dispatch(networkDown()).then(console.log(error)))
+        
+        
+         
+    }
+
+
+}
+
+//gets all contacts from the main site
+export function getContactList(){
+    return function(dispatch){
+
+        dispatch(requestContacts)
+        
+        return fetch(C.BASE_URL+'?token='+C.TMP_TOKEN+'&AC=CR', {
+            //return fetch(C.TEST_URL, {
+            method: 'GET',
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            }
+        })
+        .then(response=>response.json()
+        .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getAllContacts(data.contacts)))
+        //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
+        , error => dispatch(networkDown()).then(console.log(error)))
+        
         
          
     }
