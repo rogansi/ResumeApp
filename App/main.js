@@ -20,4 +20,5 @@ const store = createStore(resume,applyMiddleware(
 
 
 store.dispatch(getProjectList())
+.then(console.log(store.getState()))
 .then(ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app')))

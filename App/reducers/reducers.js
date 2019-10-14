@@ -7,8 +7,9 @@ export const resume = (state={
 },action) =>{
     switch(action.type){
         case C.GET_ALL_PROJECTS:
+            console.log(action.contacts)
             return  Object.assign({}, state, {
-                projects: action.projects
+                projects: action.contacts
             })
 
         default:

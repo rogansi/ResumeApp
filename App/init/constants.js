@@ -6,7 +6,8 @@ const  constants = {
     }],
     
     //authorization and urls
-    BASE_URL: "https://josephtapper.org/Resume/api/",
+    BASE_URL: "https://josephtapper.org/Resume/api/action/index.php",
+    TEST_URL: "https://josephtapper.org/Resume/api/action/test.php",
     TMP_TOKEN: "ZQcCxHqXNUqAgqf5zIV0",
 
     //Action Definitions

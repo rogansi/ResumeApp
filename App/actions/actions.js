@@ -18,18 +18,17 @@ export function getProjectList(){
         dispatch(requestProjects)
         console.log("HELLO")
         return fetch(C.BASE_URL, {
-            method: 'POST',
+            //return fetch(C.TEST_URL, {
+            method: 'GET',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: {
-                'token': C.TMP_TOKEN
+                'Content-Type':'application/x-www-form-urlencoded'
             }
         })
-        
         .then(response=>response.json()
         .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getAllProjects(data)))
+        //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
         , error => dispatch(networkDown()).then(console.log(error)))
+        
          
     }
 
