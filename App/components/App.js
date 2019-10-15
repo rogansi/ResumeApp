@@ -13,8 +13,18 @@ class App extends Component {
     
     render(){
         return (
-            <div id= "all">
-              HELLO
+            <div id = "content">
+            <div id= "appTopMenu">
+              HELLO!
+            </div>
+
+            <div id= "appSideMenu">
+               AGAIN
+            </div>
+
+            <div id= "appDisplayContent">
+                FINAL
+            </div>
             </div>
         );
     }

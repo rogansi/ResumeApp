@@ -2,3 +2,46 @@
     margin:0px;
     padding:0px;
 }
+
+#all {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#header {
+    min-height: 100px;
+    min-width: 500px;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-column: 1;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column: 1;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-column: 1;
+}
+#appTopMenu {
+    grid-column: 1/13;
+}
+#appSideMenu {
+    grid-column: 1/4;
+}
+#appDisplayContent {
+    grid-column: 4/13;
+}
+#footer {
+    min-height: 100px;
+    min-width: 500px;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column: 1;
+}
