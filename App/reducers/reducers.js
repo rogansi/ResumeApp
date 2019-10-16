@@ -1,10 +1,7 @@
 import C from '../init/constants'
  
 
-export const resume = (state={
-        projects:[],
-        contacts:[]
-},action) =>{
+export const resume = (state=C.INITIAL_STATE,action) =>{
     switch(action.type){
         case C.GET_ALL_PROJECTS:
             return  Object.assign({}, state, {
@@ -15,7 +12,15 @@ export const resume = (state={
             return  Object.assign({}, state, {
                 contacts: action.contacts
             })
-
+        
+        case C.GET_CONTACT:
+            return  Object.assign({}, state, {
+                 CurrentContact: action.contact[0]
+            })
+        case C.GET_PROJECT:
+            return  Object.assign({}, state, {
+                CurrentProject: action.project[0]
+            })
         default:
             return state
     }

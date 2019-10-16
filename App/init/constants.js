@@ -1,9 +1,11 @@
 const  constants = {
     //initial State
-    INITIAL_STATE:[{
-        Projects:[],
-        Contacts:[]
-    }],
+    INITIAL_STATE:{
+        CurrentProject:{},
+        CurrentContact:{},
+        projects:[],
+        contacts:[]
+    },
     
     //authorization and urls
     BASE_URL: "https://josephtapper.org/Resume/api/action/",
@@ -17,7 +19,9 @@ const  constants = {
     NETWORK_DOWN:"NETWORK_DOWN",
     GET_PROJECT: "GET_PROJECT",
     GET_ALL_SKILLS: "GET_ALL_SKILLS",
-    GET_ALL_CONTACTS: "GET_ALL_CONTACTS"
+    GET_ALL_CONTACTS: "GET_ALL_CONTACTS",
+    GET_CONTACT: "GET_CONTACT",
+    GET_PROJECT: "GET_PROJECT"
     
 }
 

@@ -12,10 +12,19 @@ export const getAllProjects = (projects) =>({
     type: C.GET_ALL_PROJECTS,
     projects
 })
+export const getProject = (project) =>({
+    type: C.GET_PROJECT,
+    project
+})
 
 export const getAllContacts = (contacts) =>({
     type: C.GET_ALL_CONTACTS,
     contacts
+})
+
+export const getContact = (contact) =>({
+    type: C.GET_CONTACT,
+    contact
 })
 
 export const networkDown = () =>({
@@ -47,6 +56,56 @@ export function getProjectList(){
 
 
 }
+
+//gets a project by ID
+export function getProjectById(pid){
+    return function(dispatch){
+
+        
+        console.log(C.BASE_URL+'?token='+C.TMP_TOKEN+'&AC=GPBI&PID='+pid)
+        return fetch(C.BASE_URL+'?token='+C.TMP_TOKEN+'&AC=GPBI&PID='+pid, {
+            //return fetch(C.TEST_URL, {
+            method: 'GET',
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            }
+        })
+        .then(response=>response.json()
+        .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getProject(data.projects)))
+        //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
+        , error => dispatch(networkDown()).then(console.log(error)))
+        
+        
+         
+    }
+}
+
+
+//gets a contact by ID
+export function getContactById(cid){
+    return function(dispatch){
+
+        
+        console.log(C.BASE_URL+'?token='+C.TMP_TOKEN+'&AC=GCBI&CID='+cid)
+        return fetch(C.BASE_URL+'?token='+C.TMP_TOKEN+'&AC=GCBI&CID='+cid, {
+            //return fetch(C.TEST_URL, {
+            method: 'GET',
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            }
+        })
+        .then(response=>response.json()
+        .then(!response.ok?data=>dispatch(networkDown()):data=>dispatch(getContact(data.contacts)))
+        //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
+        , error => dispatch(networkDown()).then(console.log(error)))
+        
+        
+         
+    }
+}
+
 
 //gets all contacts from the main site
 export function getContactList(){

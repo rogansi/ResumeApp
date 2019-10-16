@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { resume } from './reducers/reducers'
-import { getProjectList, getContactList } from './actions/actions'
+import { getProjectList, getContactList, getContactById, getProjectById } from './actions/actions'
 
 
 //Using middleware to log the action calls for debugging purposes
@@ -21,4 +21,7 @@ const store = createStore(resume,applyMiddleware(
 
 store.dispatch(getProjectList())
 .then(store.dispatch(getContactList()))
+//testing output of different calls
+.then(store.dispatch(getProjectById(1)))
+.then(store.dispatch(getContactById(4)))
 .then(ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app')))
