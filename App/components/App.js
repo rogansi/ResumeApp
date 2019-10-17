@@ -23,12 +23,21 @@ class App extends Component {
             </div>
 
             <div id= "appDisplayContent">
-                FINAL
+                <div className = "projectcard">
+                    <div className = "projectimage"><img src = {"https://josephtapper.org/Resume/api/images/"+this.props.CurrentProject.pr_image} alt="somepic" /></div>
+                    <div className = "container">
+                        
+                    </div>
+                </div>
             </div>
             </div>
         );
     }
 }
 
+const mapStateToProps = (state) =>({
+    CurrentProject: state.CurrentProject
+})
 
-export default connect()(App)
+
+export default connect(mapStateToProps)(App)
