@@ -22,11 +22,11 @@ class App extends Component {
                AGAIN
             </div>
 
-            <div id= "appDisplayContent">
+            <div id = "appDisplayContent">
                 <div className = "projectcard">
-                    <div className = "projectimage"><img src = {"https://josephtapper.org/Resume/api/images/"+this.props.CurrentProject.pr_image} alt="somepic" /></div>
+                    <div className = "projectimage"><img className = "cardImage" src = {"https://josephtapper.org/Resume/api/images/"+this.props.CurrentProject.pr_image} alt="somepic" /></div>
                     <div className = "container">
-                        
+                        {this.props.CurrentProject.pr_name}
                     </div>
                 </div>
             </div>
