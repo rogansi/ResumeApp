@@ -3,7 +3,7 @@ import ProjectCard from '../components/ProjectCard'
 import {getProjectById} from '../actions/actions'
 
 const mapStateToProps = (state) =>({
-      projects: state.projects,
+      projects: state.projects
 })
 
 const mapDispatchToProps = (dispatch) => ({

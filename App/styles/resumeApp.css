@@ -1,32 +1,6 @@
-/*Universal styles*/
-.projectcard {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    max-width: 250px;
-}
 
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-  
-.container {
-    padding: 2px 16px;
-}
 
-.projectimage {
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.cardImage {
-    max-width:250px;
-}
-/*Mobiel Style*/
-@media only screen and (max-width: 600px){
-    
-}
 
 
 /*Desktop Style*/
@@ -67,13 +41,60 @@
     grid-column: 1/4;
 }
 #appDisplayContent {
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
     grid-column: 4/13;
 }
 #footer {
     min-height: 100px;
     min-width: 500px;
-
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-column: 1;
+}
+
+.projectcard {
+    width: 100%;
+    grid-column: span 4;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 250px;
+}
+
+.projectcard:hover {
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+}
+  
+.container {
+    padding: 2px 16px;
+}
+
+.projectimage {
+    height:250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImage {
+    max-height:100%;
+    max-width:250px;
+}
+
+/*Mobile Style*/
+@media only screen and (max-width: 600px){
+    #appDisplayContent {
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+        grid-column: 4/13;
+    }
+
+    .projectcard {
+        width: 100%;
+        grid-column: 1/12;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        max-width: 250px;
+    }
 }

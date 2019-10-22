@@ -1,6 +1,7 @@
 //App.js
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import ProjectCardContainer from '../containers/ProjectCardContainer'
 require("babel-core/register");
 require("babel-polyfill");
 
@@ -15,25 +16,15 @@ class App extends Component {
         return (
             <div id = "content">
             <div id= "appTopMenu">
-              HELLO!
+              
             </div>
 
             <div id= "appSideMenu">
-               AGAIN
+               
             </div>
 
             <div id = "appDisplayContent">
-                {this.props.Projects.map((project,i)=>(
-                    <div className = "projectcard" key={i}>
-                        <div className = "projectimage"><img className = "cardImage" src = {"https://josephtapper.org/Resume/api/images/"+project.pr_image} alt="somepic" /></div>
-                        <div className = "container">
-                            {project.pr_name}
-                        </div>
-                    </div>
-                ))}
-
-
-                
+                {(this.props.Projects.length>0)?this.props.Projects.map((project,i)=>(<ProjectCardContainer key={i} image={project.pr_image} title={project.pr_name} projectid={i}></ProjectCardContainer>)):<div></div>}
             </div>
             </div>
         );
