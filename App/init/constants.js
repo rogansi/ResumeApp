@@ -1,6 +1,7 @@
 const  constants = {
     //initial State
     INITIAL_STATE:{
+        projectCards:[],
         CurrentProject:{},
         CurrentContact:{},
         projects:[],
@@ -21,7 +22,8 @@ const  constants = {
     GET_ALL_SKILLS: "GET_ALL_SKILLS",
     GET_ALL_CONTACTS: "GET_ALL_CONTACTS",
     GET_CONTACT: "GET_CONTACT",
-    GET_PROJECT: "GET_PROJECT"
+    GET_PROJECT: "GET_PROJECT",
+    TOGGLE_PROJECT_CARD_SELECT: "TOGGLE_PROJECT_CARD_SELECT"
     
 }
 

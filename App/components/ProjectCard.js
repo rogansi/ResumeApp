@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 const ProjectCard = ({projectid, image, title}) =>(
-    <div className = "projectcard">
+    <div className = "projectcard" onMouseEnter={true} onMouseLeave={true}>
                         <div className = "projectimage"><img className = "cardImage" src = {"https://josephtapper.org/Resume/api/images/"+image} alt="somepic" /></div>
                         <div className = "container">
                             {title}
@@ -12,8 +12,8 @@ const ProjectCard = ({projectid, image, title}) =>(
 )
 
 ProjectCard.propTypes = {
-    projectid: PropTypes.number,
-    image: PropTypes.string,
-    title: PropTypes.string
+    projectid: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
 }
 export default ProjectCard
