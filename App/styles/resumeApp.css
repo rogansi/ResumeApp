@@ -93,6 +93,7 @@
 
 /*Left Menu*/
 .leftmenubutton:hover {
+    cursor: pointer;
     color: #39CCCC;
     background-color: #004966;
     box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
