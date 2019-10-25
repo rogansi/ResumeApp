@@ -1,13 +1,14 @@
 const  constants = {
     //initial State
     INITIAL_STATE:{
-        projectCards:[],
         CurrentProject:{},
         CurrentContact:{},
         projects:[],
         contacts:[]
     },
-    
+    APP_CONTENT_STATE:{
+        Displayed: "Home"
+    },
     //authorization and urls
     BASE_URL: "https://josephtapper.org/Resume/api/action/",
     TEST_URL: "https://josephtapper.org/Resume/api/action/test.php",
@@ -23,7 +24,7 @@ const  constants = {
     GET_ALL_CONTACTS: "GET_ALL_CONTACTS",
     GET_CONTACT: "GET_CONTACT",
     GET_PROJECT: "GET_PROJECT",
-    TOGGLE_PROJECT_CARD_SELECT: "TOGGLE_PROJECT_CARD_SELECT"
+    SET_CONTENT_PROJECTS: "SET_CONTENT_PROJECTS"
     
 }
 

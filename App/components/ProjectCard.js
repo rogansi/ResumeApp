@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 const ProjectCard = ({projectid, image, title}) =>(
-    <div className = "projectcard" onMouseEnter={true} onMouseLeave={true}>
+    <div className = "projectcard">
                         <div className = "projectimage"><img className = "cardImage" src = {"https://josephtapper.org/Resume/api/images/"+image} alt="somepic" /></div>
                         <div className = "container">
                             {title}

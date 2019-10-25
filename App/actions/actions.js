@@ -17,8 +17,9 @@ export const getProject = (project) =>({
     project
 })
 
-export const toggleProjectCardSelect = (projectid) =>({
-    type: C.TOGGLE_PROJECT_CARD_SELECT
+export const setContentProjects = (text) =>({
+    type: C.SET_CONTENT_PROJECTS,
+    text
 })
 
 export const getAllContacts = (contacts) =>({

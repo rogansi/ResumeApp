@@ -1,5 +1,6 @@
 import C from '../init/constants'
- 
+//import { combineReducers } from '../../../../../../AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux'
+import { combineReducers } from 'redux'
 
 export const resume = (state=C.INITIAL_STATE,action) =>{
     switch(action.type){
@@ -25,3 +26,19 @@ export const resume = (state=C.INITIAL_STATE,action) =>{
             return state
     }
 }
+
+export const appContent = (state=C.APP_CONTENT_STATE,action) =>{
+    switch(action.type){
+        case C.SET_CONTENT_PROJECTS:
+            return  Object.assign({}, state, {
+                Displayed: action.text
+            })
+        default:
+            return state
+    }
+}
+
+export default combineReducers({
+    resume,
+    appContent
+  })
