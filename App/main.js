@@ -5,7 +5,6 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware} from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import { resume } from './reducers/reducers'
 import { getProjectList, getContactList, getContactById, getProjectById } from './actions/actions'
 import rootReducer from './reducers/reducers'
 

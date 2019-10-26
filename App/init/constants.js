@@ -7,7 +7,8 @@ const  constants = {
         contacts:[]
     },
     APP_CONTENT_STATE:{
-        Displayed: "Home"
+        Displayed: "Home",
+        PreviouslyDisplayed: "Home",
     },
     //authorization and urls
     BASE_URL: "https://josephtapper.org/Resume/api/action/",
@@ -24,8 +25,13 @@ const  constants = {
     GET_ALL_CONTACTS: "GET_ALL_CONTACTS",
     GET_CONTACT: "GET_CONTACT",
     GET_PROJECT: "GET_PROJECT",
-    SET_CONTENT_PROJECTS: "SET_CONTENT_PROJECTS"
+    SET_CONTENT_PROJECTS: "SET_CONTENT_PROJECTS",
     
+    //Content Types
+    PROJECTS: "PROJECTS",
+    REFERENCES: "REFERENCES",
+    CONTACT: "CONTACT",
+    HOME: "HOME"
 }
 
 export default constants
