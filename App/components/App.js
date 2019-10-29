@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import C from '../init/constants'
 import ProjectCardContainer  from '../containers/ProjectCardContainer'
+import ContactCardContainer  from '../containers/ContactCardContainer'
 import LeftMenuButtonContainer from '../containers/LeftMenuButtonContainer'
 require("babel-core/register");
 require("babel-polyfill");
@@ -20,7 +21,8 @@ class App extends Component {
             case C.PROJECTS:
                 return this.props.Projects.map((project,i)=>(<ProjectCardContainer key={i} image={project.pr_image} title={project.pr_name} projectid={i}></ProjectCardContainer>))
             case C.REFERENCES:
-                return <div>References</div>
+                console.log(this.props.Contacts[0].co_firstName)
+                return this.props.Contacts.map((contact,i)=>(<ContactCardContainer key={i} person={contact}></ContactCardContainer>))
             case C.CONTACT:
                 return <div>Ways to get a hold of me</div>
 
@@ -53,6 +55,7 @@ class App extends Component {
 const mapStateToProps = (state) =>({
     CurrentProject: state.resume.CurrentProject,
     Projects: state.resume.projects,
+    Contacts: state.resume.contacts,
     Content: state.appContent.Displayed
 })
 
