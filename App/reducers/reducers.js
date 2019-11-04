@@ -22,6 +22,10 @@ export const resume = (state=C.INITIAL_STATE,action) =>{
             return  Object.assign({}, state, {
                 CurrentProject: action.project[0]
             })
+        case C.NETWORK_DOWN:
+                return  Object.assign({}, state, {
+                    NetworkDown: true
+                })
         default:
             return state
     }

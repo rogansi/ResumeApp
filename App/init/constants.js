@@ -1,10 +1,12 @@
+import token from './token'
 const  constants = {
     //initial State
     INITIAL_STATE:{
         CurrentProject:{},
         CurrentContact:{},
         projects:[],
-        contacts:[]
+        contacts:[],
+        NetworkDown: false
     },
     APP_CONTENT_STATE:{
         Displayed: "Home",
@@ -13,7 +15,7 @@ const  constants = {
     //authorization and urls
     BASE_URL: "https://josephtapper.org/Resume/api/action/",
     TEST_URL: "https://josephtapper.org/Resume/api/action/test.php",
-    TMP_TOKEN: "ZQcCxHqXNUqAgqf5zIV0",
+    TMP_TOKEN: token,
 
     //Action Definitions
     GET_ALL_PROJECTS: "GET_ALL_PROJECTS",
