@@ -5,6 +5,8 @@ import C from '../init/constants'
 import ProjectCardContainer  from '../containers/ProjectCardContainer'
 import ContactCardContainer  from '../containers/ContactCardContainer'
 import LeftMenuButtonContainer from '../containers/LeftMenuButtonContainer'
+import TopMenuButtonContainer from '../containers/TopMenuButtonContainer'
+import { getProjectList, getContactList, getContactById, getProjectById } from '../actions/actions'
 require("babel-core/register");
 require("babel-polyfill");
 
@@ -30,11 +32,15 @@ class App extends Component {
                return <div>Awesome looking home page</div>
         }
     }
+
     render(){
         return (
             <div id = "content">
             <div id= "appTopMenu">
-              
+               <TopMenuButtonContainer text={C.HOME}></TopMenuButtonContainer>
+               <TopMenuButtonContainer text={C.PROJECTS}></TopMenuButtonContainer>
+               <TopMenuButtonContainer text={C.REFERENCES}></TopMenuButtonContainer>
+               <TopMenuButtonContainer text={C.CONTACT}></TopMenuButtonContainer>
             </div>
 
             <div id= "appSideMenu">
@@ -53,11 +59,15 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) =>({
-    CurrentProject: state.resume.CurrentProject,
+    //CurrentProject: state.resume.CurrentProject,
     Projects: state.resume.projects,
     Contacts: state.resume.contacts,
     Content: state.appContent.Displayed
 })
 
+const mapDispatchToProps = (dispatch) => ({
+    getProjects: () => dispatch(getProjectList()),
+    getContacts: () => dispatch(getContactList())
+  })
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(App)

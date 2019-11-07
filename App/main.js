@@ -21,6 +21,6 @@ const store = createStore(rootReducer,applyMiddleware(
 store.dispatch(getProjectList())
 .then(store.dispatch(getContactList()))
 //testing output of different calls
-.then(store.dispatch(getProjectById(3)))
-.then(store.dispatch(getContactById(4)))
+//.then(store.dispatch(getProjectById(3)))
+//.then(store.dispatch(getContactById(4)))
 .then(ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('app')))

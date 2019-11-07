@@ -37,6 +37,10 @@ export const appContent = (state=C.APP_CONTENT_STATE,action) =>{
             return  Object.assign({}, state, {
                 Displayed: action.text
             })
+        case C.BAD_TOKEN:
+                return  Object.assign({}, state, {
+                    BadToken: true
+                })
         default:
             return state
     }

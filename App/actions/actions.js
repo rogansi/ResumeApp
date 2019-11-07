@@ -37,6 +37,11 @@ export const networkDown = (data) =>({
     data: data
 })
 
+export const badToken = (data) =>({
+    type: C.BAD_TOKEN,
+    data: data
+})
+
 //Gets all projects from the main site
 export function getProjectList(){
     return function(dispatch){
@@ -52,7 +57,7 @@ export function getProjectList(){
             }
         })
         .then(response=>response.json()
-        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(networkDown(data)):dispatch(getAllProjects(data))))
+        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(badToken(data)):dispatch(getAllProjects(data))))
         //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
         , error => dispatch(networkDown()).then(console.log(error)))
         
@@ -78,7 +83,7 @@ export function getProjectById(pid){
             }
         })
         .then(response=>response.json()
-        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(networkDown(data)):dispatch(getProject(data))))
+        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(badToken(data)):dispatch(getProject(data))))
         //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
         , error => dispatch(networkDown()).then(console.log(error)))
         
@@ -103,7 +108,7 @@ export function getContactById(cid){
             }
         })
         .then(response=>response.json()
-        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(networkDown(data)):dispatch(getContact(data))))
+        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(badToken(data)):dispatch(getContact(data))))
         //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
         , error => dispatch(networkDown()).then(console.log(error)))
         
@@ -128,7 +133,7 @@ export function getContactList(){
             }
         })
         .then(response=>response.json()
-        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(networkDown(data)):dispatch(getContacts(data))))
+        .then(!response.ok?data=>dispatch(networkDown()):data=>(data=="NOTOKEN"?dispatch(badToken(data)):dispatch(getAllContacts(data))))
         //.then(!response.ok?data=>dispatch(networkDown()):data=>console.log(response.text))
         , error => dispatch(networkDown()).then(console.log(error)))
         

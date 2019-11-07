@@ -9,6 +9,7 @@ const  constants = {
         NetworkDown: false
     },
     APP_CONTENT_STATE:{
+        BadToken: false,
         Displayed: "Home",
         PreviouslyDisplayed: "Home",
     },
@@ -28,6 +29,7 @@ const  constants = {
     GET_CONTACT: "GET_CONTACT",
     GET_PROJECT: "GET_PROJECT",
     SET_CONTENT_PROJECTS: "SET_CONTENT_PROJECTS",
+    BAD_TOKEN:"BAD_TOKEN",
     
     //Content Types
     PROJECTS: "PROJECTS",
